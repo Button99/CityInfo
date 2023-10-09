@@ -1,7 +1,11 @@
+using CityInfo.API.DbContexts;
+using CityInfo.API.Models;
+using CityInfo.API.Services;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Logging.AddConsole();
 // Add services to the container.
 
 builder.Services.AddControllers(options =>
@@ -12,6 +16,14 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
+#if DEBUG
+builder.Services.AddTransient<ILocalMailService, LocalMailService>();
+#else
+builder.Services.AddTransient<ILocalMailService, CloudMailService>();
+#endif
+
+builder.Services.AddSingleton<CitiesDataStore>();
+builder.Services.AddDbContext<CityInfoContext>(dbContextOptions => dbContextOptions.UseSqlite("Data Source=CityInfo.db"));
 
 var app = builder.Build();
 
