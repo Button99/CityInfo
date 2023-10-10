@@ -1,28 +1,42 @@
 ﻿using CityInfo.API.Models;
+using CityInfo.API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.Controllers
 {
+    [Authorize]
+
     [ApiController]
     [Route("api/cities")]
     public class CitiesController: ControllerBase
     {
-        private readonly CitiesDataStore _citiesDataStore;
-        public CitiesController(CitiesDataStore citiesDataStore)
+        private readonly ICityInfoRepository _cityInfoRepository;
+        public CitiesController(ICityInfoRepository cityInfoRepository)
         {
-            _citiesDataStore = citiesDataStore;
+            _cityInfoRepository = cityInfoRepository;
         }
 
         public CitiesDataStore CitiesDataStore { get; }
 
         [HttpGet]
-        public ActionResult<IEnumerable<CityDto>> getCities()
+        public async Task<ActionResult<IEnumerable<CityWithoutPointOfInterestDto>>> getCities()
         {
-            var cities = new JsonResult(_citiesDataStore.Cities);
+            var cities = await _cityInfoRepository.getCitiesAsync();
+            var results = new List<CityWithoutPointOfInterestDto>();
+            foreach(var city in cities)
+            {
+                results.Add(new CityWithoutPointOfInterestDto
+                {
+                    id = city.id,
+                    description = city.description,
+                    name = city.name
+                });
+            }
             return Ok(cities);
         }
 
-        [HttpGet("{id}")]
+/*        [HttpGet("{id}")]
         public ActionResult<CityDto> getCity(int id)
         {
             var city = new JsonResult(_citiesDataStore.Cities.FirstOrDefault(c => c.id == id));
@@ -31,6 +45,6 @@ namespace CityInfo.API.Controllers
                 return NotFound();
             }
             return Ok(city);
-        }
+        }*/
     }
 }
