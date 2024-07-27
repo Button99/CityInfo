@@ -45,3 +45,14 @@ C:\Users\User\source\repos\CityInfo.API\CityInfo.API\bin\Debug\net6.0\Microsoft.
 C:\Users\User\source\repos\CityInfo.API\CityInfo.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Users\User\source\repos\CityInfo.API\CityInfo.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\User\source\repos\CityInfo.API\CityInfo.API\bin\Debug\net6.0\SQLitePCLRaw.core.dll
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.AssemblyInfo.cs
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.sourcelink.json
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.dll
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\refint\CityInfo.API.dll
+C:\Users\User\source\repos\CityInfo\CityInfo.API\CityInfo.API\obj\Debug\net6.0\CityInfo.API.pdb
